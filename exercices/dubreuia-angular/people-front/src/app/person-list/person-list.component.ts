@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PeopleService } from '../people.service';
+import {Component, OnInit} from '@angular/core';
+import {Person} from '../models/person';
+import {PersonService} from '../services/person-service.service';
 
 @Component({
   selector: 'app-person-list',
@@ -8,16 +9,16 @@ import { PeopleService } from '../people.service';
 })
 export class PersonListComponent implements OnInit {
 
-  public listOfPerson: object[];
+  persons: Person[];
 
-  constructor(private service : PeopleService) { }
+  constructor(private personService: PersonService) {
+    this.personService = personService;
+  }
 
-  ngOnInit(): void {
-    //utiliser mon service
-    this.service.findPeople()
-    .then(response => response.json())
-    //j'ai un array d'objets [{firstname:"fn", lastname:"ln"}...]
-    .then(Response =>this.listOfPerson = Response)
+  ngOnInit() {
+    this.personService.findAll()
+      .then(result => result.json())
+      .then(result => this.persons = result);
   }
 
 }

@@ -1,2 +1,14 @@
-<a routerLink="/persons">List Person</a>
-<router-outlet></router-outlet>
+<div>
+  <h2><a routerLink="/">{{title}}</a></h2>
+  <div>
+    <!-- TODO ajouter un composant "weather" -->
+    <!--<app-weather></app-weather>-->
+    <div>ajouter un composant weather ici</div>
+  </div>
+  <div>
+    <button routerLink="/persons" class="">List Persons</button>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
