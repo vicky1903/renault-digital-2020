@@ -1,3 +1,14 @@
-<button (click)="observable()">observable</button>
-<button (click)="promise()">promise</button>
-<!--<div>observable value: {{observableValue}}</div>-->
+<div>
+  <h2><a routerLink="/">{{title}}</a></h2>
+  <div>
+    <!-- TODO ajouter un composant "weather" -->
+    <!--<app-weather></app-weather>-->
+    <div>ajouter un composant weather ici</div>
+  </div>
+  <div>
+    <button routerLink="/persons" class="">List Persons</button>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
