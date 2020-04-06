@@ -2,6 +2,10 @@ package com.renault.entities;
 
 public class Country {
 
-    // TODO
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+
+    @Column
 
 }
